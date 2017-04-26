@@ -1,0 +1,20 @@
+.time {
+  color: white;
+  font-size: 70px;
+  font-family:VT323;
+  text-align:center;
+}
+
+.outer {
+	float:center;
+	position: relative;
+  	display:inline-block;
+  	margin-top: 45px;
+	background-color:#6b3872;
+	background-position: center
+	width:60%;
+	padding:2%;
+	margin-left:38%;
+	border-radius: 15%;
+	box-shadow: 10px 10px 10px;
+}
