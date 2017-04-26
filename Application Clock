@@ -1,0 +1,39 @@
+import React from 'react';
+
+class Application extends React.Component {
+  constructor(props) {
+    super(props);
+    var date= this.getTimeString();
+    console.log("This is the date:", date);
+    this.state= {
+      time: date
+    }
+  }
+  getTimeString() {
+    const date = new Date(Date.now()).toLocaleTimeString();
+    return date;
+  }
+  componentDidMount() {
+    console.log("This is the particular instance:", this);
+    const _this = this;
+    this.timer = setInterval(function(){
+      var date = _this.getTimeString();
+      _this.setState({
+        time: date
+      })
+    },1000)
+  }
+  componentWillUnmount() {
+      clearInterval(this.timer);
+
+  }
+  render() {
+    return(
+      <div className="outer">
+      <p className="time">{this.state.time}</p>
+      </div>
+    );
+  }
+}
+
+export default Application;
